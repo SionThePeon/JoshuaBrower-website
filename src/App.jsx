@@ -22,7 +22,7 @@ function GamePage({ game }) {
     <>
       <Header />
       <main id="main-content" className="game-page">
-        <a className="back-link" href={`${base}#projects`}>← Back to games</a>
+        <a className="back-link" href={`${base}#games`}>← Back to games</a>
         <p className="eyebrow">{game.format} game</p>
         <h1>{game.title}</h1>
         {game.play ? (
@@ -61,7 +61,6 @@ export default function App() {
             Welcome to my corner of the web. I'm building this space to share my work,
             projects, and a little about myself.
           </p>
-          <a className="button" href="#projects">Explore games</a>
         </section>
 
         <section className="section" id="about" aria-labelledby="about-title">
@@ -69,8 +68,8 @@ export default function App() {
           <p>Add a short introduction here: what you do, what interests you, and what you want visitors to know.</p>
         </section>
 
-        <section className="section" id="projects" aria-labelledby="projects-title">
-          <h2 id="projects-title">Games</h2>
+        <section className="section" id="games" aria-labelledby="games-title">
+          <h2 id="games-title">Games</h2>
           <p className="games-intro">Pick a game from the shelf.</p>
           <div className="game-stack">
             {games.map((game, index) => (
@@ -91,6 +90,11 @@ export default function App() {
               </div>
             ))}
           </div>
+        </section>
+
+        <section className="section" id="projects" aria-labelledby="projects-title">
+          <h2 id="projects-title">Projects</h2>
+          <p>More projects coming soon.</p>
         </section>
 
         <section className="section" id="contact" aria-labelledby="contact-title">
