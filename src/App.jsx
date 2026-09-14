@@ -55,10 +55,10 @@ export default function App() {
       <Header />
       <main id="main-content">
         <section className="hero" aria-labelledby="hero-title">
-          <h1 id="hero-title">Hi, I'm Joshua Brower.</h1>
+          <p className="eyebrow">Joshua Brower · Computer Science at UMN</p>
+          <h1 id="hero-title">Building games and the graphics behind them.</h1>
           <p className="intro">
-            Welcome to my online portfolio. I'm building this space to share my work,
-            projects, and a little about myself.
+            Explore my game jam projects and the technical work behind them.
           </p>
         </section>
 

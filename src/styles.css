@@ -19,7 +19,9 @@ button:focus-visible { outline: 3px solid #88d5e9; outline-offset: 4px; }
 nav { display: flex; flex-wrap: wrap; gap: 1.25rem; }
 nav a { color: #bdcadc; text-decoration: none; }
 nav a:hover { color: #fff; }
-.hero { padding-block: clamp(5rem, 12vw, 9rem); }
+.hero { padding-block: clamp(5rem, 12vw, 9rem); text-align: center; }
+.hero h1, .hero .intro { margin-inline: auto; }
+.hero h1 { max-width: 16ch; }
 .eyebrow { color: #88d5e9; font-size: .8rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
 h1 { max-width: 14ch; margin: .5rem 0 1.25rem; font-size: clamp(3rem, 8vw, 5.5rem); line-height: 1.05; letter-spacing: -.055em; }
 .intro { max-width: 56ch; color: #bdcadc; font-size: clamp(1.1rem, 2.5vw, 1.3rem); line-height: 1.7; }
@@ -29,9 +31,9 @@ h1 { max-width: 14ch; margin: .5rem 0 1.25rem; font-size: clamp(3rem, 8vw, 5.5re
 .section h2 { margin-top: 0; font-size: 2rem; }
 .section p { max-width: 65ch; color: #bdcadc; line-height: 1.7; }
 .games-intro { margin-bottom: 2rem; }
-.game-stack { display: grid; gap: .45rem; padding: .8rem; border-radius: 1rem; background: #0b1320; box-shadow: 0 22px 50px #0005; }
+.game-stack { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; padding: .8rem; border-radius: 1rem; background: #0b1320; box-shadow: 0 22px 50px #0005; }
 .game-entry { min-width: 0; }
-.game-spine { position: relative; display: flex; align-items: center; gap: 1.25rem; min-height: 86px; padding: 1rem 1.5rem; overflow: hidden; border-radius: .3rem .65rem .65rem .3rem; border-left: 10px solid #ffffff30; color: #fff; text-decoration: none; box-shadow: inset 8px 0 14px #0003, inset 0 -8px 12px #0003; transition: transform .2s ease, box-shadow .2s ease; }
+.game-spine { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: .75rem; min-height: 190px; padding: 1.25rem 1.5rem; overflow: hidden; border-radius: .65rem .65rem 0 0; border-left: 10px solid #ffffff30; color: #fff; text-decoration: none; box-shadow: inset 8px 0 14px #0003, inset 0 -8px 12px #0003; transition: transform .2s ease, box-shadow .2s ease; }
 .game-context { background: #111b2b; border-radius: 0 0 .65rem .65rem; color: #d5e0ed; }
 .game-context-label { display: block; padding: .5rem 1.25rem; color: #a9bfd5; font-size: .75rem; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
 .game-context ul { max-height: 0; overflow: hidden; margin: 0; padding: 0 2.5rem; line-height: 1.7; transition: max-height .25s ease, padding .25s ease; }
@@ -40,12 +42,12 @@ h1 { max-width: 14ch; margin: .5rem 0 1.25rem; font-size: clamp(3rem, 8vw, 5.5re
 .game-spine-2 { background: linear-gradient(110deg, #875435, #613b2b); }
 .game-spine-3 { background: linear-gradient(110deg, #426a77, #2b4c61); }
 .game-spine-4 { background: linear-gradient(110deg, #62517d, #403657); }
-.game-spine:hover, .game-spine:focus-visible { transform: translateX(10px); box-shadow: inset 8px 0 14px #0003, 0 12px 24px #0005; }
+.game-spine:hover, .game-spine:focus-visible { transform: translateY(-4px); box-shadow: inset 8px 0 14px #0003, 0 12px 24px #0005; }
 .spine-number { flex: none; font-size: .8rem; opacity: .7; }
 .spine-title { font-size: clamp(1.1rem, 3vw, 1.6rem); font-weight: 750; letter-spacing: -.02em; }
-.spine-format { margin-left: auto; font-size: .7rem; font-weight: 750; letter-spacing: .13em; text-transform: uppercase; opacity: .75; }
-.spine-reveal { position: absolute; inset: 0 0 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 2rem; width: min(46%, 330px); padding: 1rem 1.5rem; background: #d7ecf0; color: #142335; font-weight: 750; transform: translateX(101%); transition: transform .2s ease; box-shadow: -12px 0 22px #0004; }
-.game-spine:hover .spine-reveal, .game-spine:focus-visible .spine-reveal { transform: translateX(0); }
+.spine-format { margin-top: auto; font-size: .7rem; font-weight: 750; letter-spacing: .13em; text-transform: uppercase; opacity: .75; }
+.spine-reveal { position: absolute; inset: auto 0 0; display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 48px; padding: .75rem 1.5rem; background: #d7ecf0; color: #142335; font-weight: 750; transform: translateY(101%); transition: transform .2s ease; box-shadow: 0 -12px 22px #0004; }
+.game-spine:hover .spine-reveal, .game-spine:focus-visible .spine-reveal { transform: translateY(0); }
 .game-page { padding-block: 3rem 5rem; }
 .game-page h1 { max-width: none; font-size: clamp(2.5rem, 6vw, 4.5rem); }
 .back-link { color: #88d5e9; text-decoration: none; }
@@ -63,9 +65,9 @@ h1 { max-width: 14ch; margin: .5rem 0 1.25rem; font-size: clamp(3rem, 8vw, 5.5re
 @media (max-width: 580px) {
   .site-header { align-items: flex-start; flex-direction: column; }
   nav { gap: 1rem; }
-  .game-spine { min-height: 78px; padding: .75rem 1rem; gap: .7rem; }
-  .spine-format { display: none; }
-  .spine-reveal { width: 55%; padding: .75rem; font-size: .8rem; }
+  .game-stack { grid-template-columns: 1fr; }
+  .game-spine { min-height: 160px; padding: 1rem; }
+  .spine-reveal { padding: .75rem 1rem; font-size: .8rem; }
   .game-frame-wrap { min-height: 300px; }
 }
 
