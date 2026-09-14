@@ -63,13 +63,24 @@ export default function App() {
         </section>
 
         <section className="section" id="about" aria-labelledby="about-title">
-          <h2 id="about-title">About</h2>
-          <p>
-            Hi! I'm Joshua, a junior in college at University of Minnesota - Twin Cities studying computer science.
-            I love game design and development, and have participated in multiple game jams in small groups doing multiple roles.
-            I love learning more about both graphics and programming in games as I dive more into the game development industry.
-            I have experience working in both Unity and Godot engines.
-          </p>
+          <div className="about-layout">
+            <div className="about-copy">
+              <h2 id="about-title">About</h2>
+              <p>
+                Hi! I'm Joshua, a junior in college at University of Minnesota - Twin Cities studying computer science.
+                I love game design and development, and have participated in multiple game jams in small groups doing multiple roles.
+                I love learning more about both graphics and programming in games as I dive more into the game development industry.
+                I have experience working in both Unity and Godot engines.
+              </p>
+            </div>
+            <div className="about-photos">
+              <figure className="about-presentation">
+                <img src={`${base}images/joshua-presenting.jpg`} alt="Joshua presenting Toast's Adventure at a game jam" loading="lazy" />
+                <figcaption>Presenting at a game jam</figcaption>
+              </figure>
+              <img className="about-headshot" src={`${base}images/joshua-headshot.jpg`} alt="Portrait of Joshua" loading="lazy" />
+            </div>
+          </div>
         </section>
 
         <section className="section" id="games" aria-labelledby="games-title">
