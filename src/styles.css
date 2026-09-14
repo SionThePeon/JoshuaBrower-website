@@ -47,7 +47,6 @@ h1 { max-width: 14ch; margin: .5rem 0 1.25rem; font-size: clamp(3rem, 8vw, 5.5re
 .game-spine-3 { background: linear-gradient(110deg, #426a77, #2b4c61); }
 .game-spine-4 { background: linear-gradient(110deg, #62517d, #403657); }
 .game-spine:hover, .game-spine:focus-visible { transform: translateY(-4px); box-shadow: inset 8px 0 14px #0003, 0 12px 24px #0005; }
-.spine-number { flex: none; font-size: .8rem; opacity: .7; }
 .spine-title { font-size: clamp(1.1rem, 3vw, 1.6rem); font-weight: 750; letter-spacing: -.02em; }
 .spine-format { margin-top: auto; font-size: .7rem; font-weight: 750; letter-spacing: .13em; text-transform: uppercase; opacity: .75; }
 .spine-reveal { position: absolute; inset: auto 0 0; display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 48px; padding: .75rem 1.5rem; background: #d7ecf0; color: #142335; font-weight: 750; transform: translateY(101%); transition: transform .2s ease; box-shadow: 0 -12px 22px #0004; }

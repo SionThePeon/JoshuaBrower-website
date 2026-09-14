@@ -87,7 +87,6 @@ export default function App() {
             {games.map((game, index) => (
               <div className="game-entry" key={game.slug}>
                 <a className={`game-spine game-spine-${index + 1}`} href={`${base}?game=${game.slug}`} aria-describedby={`${game.slug}-context`}>
-                  <span className="spine-number">0{index + 1}</span>
                   <span className="spine-title">{game.title}</span>
                   <span className="spine-format">{game.format}</span>
                   <span className="spine-reveal" aria-hidden="true">
