@@ -55,17 +55,21 @@ export default function App() {
       <Header />
       <main id="main-content">
         <section className="hero" aria-labelledby="hero-title">
-          <p className="eyebrow">Personal website</p>
           <h1 id="hero-title">Hi, I'm Joshua Brower.</h1>
           <p className="intro">
-            Welcome to my corner of the web. I'm building this space to share my work,
+            Welcome to my online portfolio. I'm building this space to share my work,
             projects, and a little about myself.
           </p>
         </section>
 
         <section className="section" id="about" aria-labelledby="about-title">
           <h2 id="about-title">About</h2>
-          <p>Add a short introduction here: what you do, what interests you, and what you want visitors to know.</p>
+          <p>
+            Hi! I'm Joshua, a junior in college at University of Minnesota - Twin Cities studying computer science.
+            I love game design and development, and have participated in multiple game jams in small groups doing multiple roles.
+            I love learning more about both graphics and programming in games as I dive more into the game development industry.
+            I have experience working in both Unity and Godot engines.
+          </p>
         </section>
 
         <section className="section" id="games" aria-labelledby="games-title">
