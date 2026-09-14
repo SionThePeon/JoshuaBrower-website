@@ -1,16 +1,23 @@
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
+import { useRef } from 'react'
 
 const base = import.meta.env.BASE_URL
 
 const games = [
-  { slug: 'biggies-math-adventure', title: "Biggie's Math Adventure", format: 'WebGL', play: `${base}games/biggies-math-adventure/` },
-  { slug: 'toaster-3', title: 'Toaster 3', format: 'WebGL', play: `${base}games/toaster-3/` },
-  { slug: 'frost-bite-delivery', title: 'Frost-Bite Delivery', format: 'Windows', download: `${base}downloads/Frost-Bite_DeliveryBigMode2026.zip` },
-  { slug: 'the-shell-company', title: 'The Shell Company', format: 'Windows', download: `${base}downloads/TheShellCompanyZip.zip` },
+  { slug: 'biggies-math-adventure', title: "Biggie's Math Adventure", format: 'WebGL', play: `${base}games/biggies-math-adventure/`, context: ['test', 'test', 'test'] },
+  { slug: 'toaster-3', title: "Toast's Adventure", format: 'WebGL', play: `${base}games/toaster-3/`, context: ['test', 'test', 'test'] },
+  { slug: 'frost-bite-delivery', title: 'Frost-Bite Delivery', format: 'Windows', download: `${base}downloads/Frost-Bite_DeliveryBigMode2026.zip`, context: ['test', 'test', 'test'] },
+  { slug: 'the-shell-company', title: 'The Shell Company', format: 'Windows', download: `${base}downloads/TheShellCompanyZip.zip`, context: ['test', 'test', 'test'] },
 ]
 
 function GamePage({ game }) {
+  const frameRef = useRef(null)
+
+  function enterFullscreen() {
+    frameRef.current?.requestFullscreen?.()
+  }
+
   return (
     <>
       <Header />
@@ -20,9 +27,10 @@ function GamePage({ game }) {
         <h1>{game.title}</h1>
         {game.play ? (
           <>
-            <p className="game-note">The game may take a moment to load. Use its fullscreen control for a larger view.</p>
+            <p className="game-note">The game may take a moment to load. For the best view, use the fullscreen button below.</p>
+            <button className="button fullscreen-button" type="button" onClick={enterFullscreen}>Play fullscreen</button>
             <div className="game-frame-wrap">
-              <iframe src={game.play} title={`Play ${game.title}`} allowFullScreen />
+              <iframe ref={frameRef} src={game.play} title={`Play ${game.title}`} allowFullScreen />
             </div>
           </>
         ) : (
@@ -66,15 +74,20 @@ export default function App() {
           <p className="games-intro">Pick a game from the shelf.</p>
           <div className="game-stack">
             {games.map((game, index) => (
-              <a className={`game-spine game-spine-${index + 1}`} href={`${base}?game=${game.slug}`} key={game.slug}>
-                <span className="spine-number">0{index + 1}</span>
-                <span className="spine-title">{game.title}</span>
-                <span className="spine-format">{game.format}</span>
-                <span className="spine-reveal" aria-hidden="true">
-                  <span>{game.play ? 'Play on this site' : 'View download page'}</span>
-                  <span>↗</span>
-                </span>
-              </a>
+              <div className="game-entry" key={game.slug}>
+                <a className={`game-spine game-spine-${index + 1}`} href={`${base}?game=${game.slug}`} aria-describedby={`${game.slug}-context`}>
+                  <span className="spine-number">0{index + 1}</span>
+                  <span className="spine-title">{game.title}</span>
+                  <span className="spine-format">{game.format}</span>
+                  <span className="spine-reveal" aria-hidden="true">
+                    <span>{game.play ? 'Play on this site' : 'View download page'}</span>
+                    <span>↗</span>
+                  </span>
+                </a>
+                <div className="game-context" id={`${game.slug}-context`}>
+                  <ul>{game.context.map((point, pointIndex) => <li key={pointIndex}>{point}</li>)}</ul>
+                </div>
+              </div>
             ))}
           </div>
         </section>

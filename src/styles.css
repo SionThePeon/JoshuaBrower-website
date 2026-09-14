@@ -11,6 +11,7 @@ html { scroll-behavior: smooth; }
 body { margin: 0; min-width: 320px; }
 a { color: inherit; }
 a:focus-visible { outline: 3px solid #88d5e9; outline-offset: 4px; }
+button:focus-visible { outline: 3px solid #88d5e9; outline-offset: 4px; }
 
 .site-header, .site-footer, main { width: min(100% - 3rem, 960px); margin-inline: auto; }
 .site-header { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding-block: 1.5rem; }
@@ -29,7 +30,12 @@ h1 { max-width: 14ch; margin: .5rem 0 1.25rem; font-size: clamp(3rem, 8vw, 5.5re
 .section p { max-width: 65ch; color: #bdcadc; line-height: 1.7; }
 .games-intro { margin-bottom: 2rem; }
 .game-stack { display: grid; gap: .45rem; padding: .8rem; border-radius: 1rem; background: #0b1320; box-shadow: 0 22px 50px #0005; }
+.game-entry { min-width: 0; }
 .game-spine { position: relative; display: flex; align-items: center; gap: 1.25rem; min-height: 86px; padding: 1rem 1.5rem; overflow: hidden; border-radius: .3rem .65rem .65rem .3rem; border-left: 10px solid #ffffff30; color: #fff; text-decoration: none; box-shadow: inset 8px 0 14px #0003, inset 0 -8px 12px #0003; transition: transform .2s ease, box-shadow .2s ease; }
+.game-context { display: grid; grid-template-rows: 0fr; background: #111b2b; border-radius: 0 0 .65rem .65rem; color: #d5e0ed; transition: grid-template-rows .25s ease; }
+.game-context ul { min-height: 0; overflow: hidden; margin: 0; padding: 0 2.5rem; line-height: 1.7; }
+.game-entry:hover .game-context, .game-entry:focus-within .game-context { grid-template-rows: 1fr; }
+.game-entry:hover .game-context ul, .game-entry:focus-within .game-context ul { padding-block: 1rem; }
 .game-spine-1 { background: linear-gradient(110deg, #315875, #21425e); }
 .game-spine-2 { background: linear-gradient(110deg, #875435, #613b2b); }
 .game-spine-3 { background: linear-gradient(110deg, #426a77, #2b4c61); }
@@ -46,8 +52,10 @@ h1 { max-width: 14ch; margin: .5rem 0 1.25rem; font-size: clamp(3rem, 8vw, 5.5re
 .back-link:hover { text-decoration: underline; }
 .game-page .eyebrow { margin-top: 3rem; }
 .game-note { color: #bdcadc; }
+.fullscreen-button { margin-top: .5rem; border: 0; cursor: pointer; font: inherit; }
 .game-frame-wrap { margin-top: 2rem; aspect-ratio: 16 / 10; min-height: 400px; background: #090e18; border: 1px solid #344154; border-radius: .8rem; overflow: hidden; }
 .game-frame-wrap iframe { width: 100%; height: 100%; border: 0; }
+.game-frame-wrap iframe:fullscreen { width: 100vw; height: 100vh; }
 .download-panel { max-width: 600px; padding: 2rem; border: 1px solid #344154; border-radius: .8rem; background: #182338; }
 .download-panel p { margin-top: 0; color: #bdcadc; line-height: 1.7; }
 .site-footer { padding-block: 2rem; color: #bdcadc; font-size: .9rem; }
