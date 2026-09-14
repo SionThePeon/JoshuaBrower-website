@@ -1,6 +1,7 @@
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import { useRef } from 'react'
+import headshot from '../headshot.png'
 
 const base = import.meta.env.BASE_URL
 
@@ -74,11 +75,7 @@ export default function App() {
               </p>
             </div>
             <div className="about-photos">
-              <figure className="about-presentation">
-                <img src={`${base}images/joshua-presenting.jpg`} alt="Joshua presenting Toast's Adventure at a game jam" loading="lazy" />
-                <figcaption>Presenting at a game jam</figcaption>
-              </figure>
-              <img className="about-headshot" src={`${base}images/joshua-headshot.jpg`} alt="Portrait of Joshua" loading="lazy" />
+              <img className="about-headshot" src={headshot} alt="Portrait of Joshua" loading="lazy" />
             </div>
           </div>
         </section>

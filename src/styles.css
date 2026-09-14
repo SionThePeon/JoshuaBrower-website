@@ -32,11 +32,8 @@ h1 { max-width: 14ch; margin: .5rem 0 1.25rem; font-size: clamp(3rem, 8vw, 5.5re
 .section p { max-width: 65ch; color: #bdcadc; line-height: 1.7; }
 .about-layout { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); align-items: center; gap: clamp(2rem, 5vw, 4rem); }
 .about-copy p { margin-bottom: 0; }
-.about-photos { position: relative; padding: 0 0 2.5rem 2rem; }
-.about-presentation { margin: 0; overflow: hidden; border: 1px solid #344154; border-radius: 1rem; background: #182338; box-shadow: 0 20px 40px #0005; }
-.about-presentation img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: center; }
-.about-presentation figcaption { padding: .7rem 1rem; color: #bdcadc; font-size: .8rem; }
-.about-headshot { position: absolute; bottom: 0; left: 0; display: block; width: 38%; aspect-ratio: 1; object-fit: cover; object-position: 33% 35%; border: 5px solid #101827; border-radius: 1rem; box-shadow: 0 12px 28px #0008; }
+.about-photos { width: 100%; max-width: 440px; }
+.about-headshot { display: block; width: 100%; height: auto; border: 1px solid #344154; border-radius: 1rem; box-shadow: 0 20px 40px #0005; }
 .games-intro { margin-bottom: 2rem; }
 .game-stack { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; padding: .8rem; border-radius: 1rem; background: #0b1320; box-shadow: 0 22px 50px #0005; }
 .game-entry { min-width: 0; }
