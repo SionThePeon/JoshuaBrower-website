@@ -13,6 +13,6 @@ Run `npm run build` to create the production site in `dist/`, or `npm run previe
 
 ## Publish
 
-In the GitHub repository, open **Settings → Pages** and set **Build and deployment → Source** to **GitHub Actions**. Push to `main` to run `.github/workflows/deploy.yml`. The site should appear at `https://<username>.github.io/JoshuaBrower-website/`.
+In the GitHub repository, open **Settings → Pages** and set **Build and deployment → Source** to **GitHub Actions**. Set the custom domain to `joshuabrowerdev.com`. Push to `main` to run `.github/workflows/deploy.yml`.
 
-The Vite `base` setting in `vite.config.js` matches this repository name. Update it if the repository name or hosting path changes. Replace the placeholder About, Projects, and Contact copy in `src/App.jsx` before sharing the site.
+The Vite `base` setting in `vite.config.js` is `/` for the custom domain. Update it if the hosting path changes.
