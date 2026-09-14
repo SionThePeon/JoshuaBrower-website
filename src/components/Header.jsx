@@ -5,7 +5,7 @@ export default function Header() {
       <a className="brand" href={base}>Joshua Brower</a>
       <nav aria-label="Main navigation">
         <a href={`${base}#about`}>About</a>
-        <a href={`${base}#games`}>Games</a>
+        <a href={`${base}#games`}>Game Jams</a>
         <a href={`${base}#projects`}>Projects</a>
         <a href={`${base}#contact`}>Contact</a>
       </nav>

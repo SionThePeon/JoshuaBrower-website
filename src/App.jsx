@@ -22,7 +22,7 @@ function GamePage({ game }) {
     <>
       <Header />
       <main id="main-content" className="game-page">
-        <a className="back-link" href={`${base}#games`}>← Back to games</a>
+        <a className="back-link" href={`${base}#games`}>← Back to Game Jams</a>
         <p className="eyebrow">{game.format} game</p>
         <h1>{game.title}</h1>
         {game.play ? (
@@ -69,7 +69,7 @@ export default function App() {
         </section>
 
         <section className="section" id="games" aria-labelledby="games-title">
-          <h2 id="games-title">Games</h2>
+          <h2 id="games-title">Game Jams</h2>
           <p className="games-intro">Pick a game from the shelf.</p>
           <div className="game-stack">
             {games.map((game, index) => (
@@ -99,7 +99,11 @@ export default function App() {
 
         <section className="section" id="contact" aria-labelledby="contact-title">
           <h2 id="contact-title">Contact</h2>
-          <p>Add the best way for people to reach you, such as an email address or profile link.</p>
+          <p>Want to get in touch? Please email me at <a href="mailto:Jsbrower29@gmail.com">Jsbrower29@gmail.com</a>.</p>
+          <p>
+            Find me on <a href="https://www.linkedin.com/in/joshua-brower-712935326">LinkedIn</a> or{' '}
+            <a href="https://github.com/SionThePeon">GitHub</a>.
+          </p>
         </section>
       </main>
       <Footer />
