@@ -30,6 +30,10 @@ h1 { max-width: 14ch; margin: .5rem 0 1.25rem; font-size: clamp(3rem, 8vw, 5.5re
 .card { max-width: 580px; padding: 1.5rem; border: 1px solid #344154; border-radius: .8rem; background: #182338; }
 .card h3 { margin-top: 0; }
 .card p { margin-bottom: 0; }
+.game-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 1rem; }
+.game-grid .card { display: flex; flex-direction: column; align-items: flex-start; }
+.game-grid .button { margin-top: auto; }
+.game-grid .card p { margin-bottom: 1.5rem; }
 .site-footer { padding-block: 2rem; color: #bdcadc; font-size: .9rem; }
 
 @media (max-width: 580px) {

@@ -1,6 +1,15 @@
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 
+const base = import.meta.env.BASE_URL
+
+const games = [
+  { title: "Biggie's Math Adventure", type: 'Play in browser', href: `${base}games/biggies-math-adventure/` },
+  { title: 'Toaster 3', type: 'Play in browser', href: `${base}games/toaster-3/` },
+  { title: 'Frost-Bite Delivery', type: 'Download for Windows', href: `${base}downloads/Frost-Bite_DeliveryBigMode2026.zip`, download: true },
+  { title: 'The Shell Company', type: 'Download for Windows', href: `${base}downloads/TheShellCompanyZip.zip`, download: true },
+]
+
 export default function App() {
   return (
     <>
@@ -22,10 +31,17 @@ export default function App() {
         </section>
 
         <section className="section" id="projects" aria-labelledby="projects-title">
-          <h2 id="projects-title">Projects</h2>
-          <div className="card">
-            <h3>Your first project</h3>
-            <p>Replace this placeholder with a project description and a link when you're ready.</p>
+          <h2 id="projects-title">Games</h2>
+          <div className="game-grid">
+            {games.map((game) => (
+              <article className="card" key={game.title}>
+                <h3>{game.title}</h3>
+                <p>{game.download ? 'Download the ZIP, extract it, then run the game on Windows.' : 'Play directly in your browser.'}</p>
+                <a className="button" href={game.href} download={game.download || undefined}>
+                  {game.type}
+                </a>
+              </article>
+            ))}
           </div>
         </section>
 

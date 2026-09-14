@@ -4,3 +4,9 @@ dist/
 .env.*
 !.env.example
 .DS_Store
+
+# Source uploads are kept locally; the deployable games live under public/.
+/BiggiesMathAdventure.zip
+/Toaster3.zip
+/Frost-Bite_DeliveryBigMode2026.zip
+/TheShellCompanyZip.zip
