@@ -6,8 +6,14 @@
     <title>Toast's Adventure</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+    <style>
+      #site-fullscreen-button { position: fixed; z-index: 10; top: 12px; right: 12px; padding: 10px 14px; border: 0; border-radius: 6px; background: #88d5e9; color: #101827; font: bold 14px system-ui, sans-serif; cursor: pointer; }
+      #unity-container:fullscreen { left: 0; top: 0; transform: none; width: 100%; height: 100%; }
+      #unity-container:fullscreen #unity-canvas { width: 100%; height: 100%; }
+    </style>
   </head>
   <body>
+    <button id="site-fullscreen-button" type="button">Play fullscreen</button>
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
@@ -24,6 +30,9 @@
       </div>
     </div>
     <script>
+      document.querySelector("#site-fullscreen-button").addEventListener("click", () => {
+        document.querySelector("#unity-container").requestFullscreen?.();
+      });
       var canvas = document.querySelector("#unity-canvas");
 
       // Shows a temporary message banner/ribbon for a few seconds, or

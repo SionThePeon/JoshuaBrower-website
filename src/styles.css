@@ -32,10 +32,10 @@ h1 { max-width: 14ch; margin: .5rem 0 1.25rem; font-size: clamp(3rem, 8vw, 5.5re
 .game-stack { display: grid; gap: .45rem; padding: .8rem; border-radius: 1rem; background: #0b1320; box-shadow: 0 22px 50px #0005; }
 .game-entry { min-width: 0; }
 .game-spine { position: relative; display: flex; align-items: center; gap: 1.25rem; min-height: 86px; padding: 1rem 1.5rem; overflow: hidden; border-radius: .3rem .65rem .65rem .3rem; border-left: 10px solid #ffffff30; color: #fff; text-decoration: none; box-shadow: inset 8px 0 14px #0003, inset 0 -8px 12px #0003; transition: transform .2s ease, box-shadow .2s ease; }
-.game-context { display: grid; grid-template-rows: 0fr; background: #111b2b; border-radius: 0 0 .65rem .65rem; color: #d5e0ed; transition: grid-template-rows .25s ease; }
-.game-context ul { min-height: 0; overflow: hidden; margin: 0; padding: 0 2.5rem; line-height: 1.7; }
-.game-entry:hover .game-context, .game-entry:focus-within .game-context { grid-template-rows: 1fr; }
-.game-entry:hover .game-context ul, .game-entry:focus-within .game-context ul { padding-block: 1rem; }
+.game-context { background: #111b2b; border-radius: 0 0 .65rem .65rem; color: #d5e0ed; }
+.game-context-label { display: block; padding: .5rem 1.25rem; color: #a9bfd5; font-size: .75rem; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
+.game-context ul { max-height: 0; overflow: hidden; margin: 0; padding: 0 2.5rem; line-height: 1.7; transition: max-height .25s ease, padding .25s ease; }
+.game-entry:hover .game-context ul, .game-entry:focus-within .game-context ul { max-height: 12rem; padding-block: .5rem 1rem; }
 .game-spine-1 { background: linear-gradient(110deg, #315875, #21425e); }
 .game-spine-2 { background: linear-gradient(110deg, #875435, #613b2b); }
 .game-spine-3 { background: linear-gradient(110deg, #426a77, #2b4c61); }

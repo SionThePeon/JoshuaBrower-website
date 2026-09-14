@@ -85,6 +85,7 @@ export default function App() {
                   </span>
                 </a>
                 <div className="game-context" id={`${game.slug}-context`}>
+                  <span className="game-context-label">Project notes ↓</span>
                   <ul>{game.context.map((point, pointIndex) => <li key={pointIndex}>{point}</li>)}</ul>
                 </div>
               </div>
