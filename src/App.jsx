@@ -6,10 +6,10 @@ import headshot from '../headshot.png'
 const base = import.meta.env.BASE_URL
 
 const games = [
-  { slug: 'biggies-math-adventure', title: "Biggie's Math Adventure", format: 'WebGL', play: `${base}games/biggies-math-adventure/`, context: ['test', 'test', 'test'] },
-  { slug: 'toaster-3', title: "Toast's Adventure", format: 'WebGL', play: `${base}games/toaster-3/`, context: ['test', 'test', 'test'] },
+  { slug: 'the-shell-company', title: 'The Shell Company', format: 'WebGL', play: `${base}games/the-shell-company/`, context: ['test', 'test', 'test'] },
   { slug: 'frost-bite-delivery', title: 'Frost-Bite Delivery', format: 'Windows', download: `${base}downloads/Frost-Bite_DeliveryBigMode2026.zip`, context: ['test', 'test', 'test'] },
-  { slug: 'the-shell-company', title: 'The Shell Company', format: 'Windows', download: `${base}downloads/TheShellCompanyZip.zip`, context: ['test', 'test', 'test'] },
+  { slug: 'toaster-3', title: "Toast's Adventure", format: 'WebGL', play: `${base}games/toaster-3/`, context: ['test', 'test', 'test'] },
+  { slug: 'biggies-math-adventure', title: "Biggie's Math Adventure", format: 'WebGL', play: `${base}games/biggies-math-adventure/`, context: ['test', 'test', 'test'] },
 ]
 
 function GamePage({ game }) {
