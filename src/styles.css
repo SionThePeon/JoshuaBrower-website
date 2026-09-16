@@ -38,10 +38,23 @@ h1 { max-width: 14ch; margin: .5rem 0 1.25rem; font-size: clamp(3rem, 8vw, 5.5re
 .game-stack { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; padding: .8rem; border-radius: 1rem; background: #0b1320; box-shadow: 0 22px 50px #0005; }
 .game-entry { min-width: 0; }
 .game-spine { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: .75rem; min-height: 190px; padding: 1.25rem 1.5rem; overflow: hidden; border-radius: .65rem .65rem 0 0; border-left: 10px solid #ffffff30; color: #fff; text-decoration: none; box-shadow: inset 8px 0 14px #0003, inset 0 -8px 12px #0003; transition: transform .2s ease, box-shadow .2s ease; }
+.game-spine-preview::before { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, #08121dcc, #08121d33); pointer-events: none; }
+.game-preview-media, .game-preview-media img, .game-preview-media video { position: absolute; inset: 0; width: 100%; height: 100%; }
+.game-preview-media { overflow: hidden; }
+.game-preview-media img, .game-preview-media video { object-fit: cover; object-position: center top; }
+.game-preview-media video { opacity: 0; pointer-events: none; transition: opacity .2s ease; }
+.game-spine-preview:focus-visible .game-preview-media video { opacity: 1; }
+@media (hover: hover) {
+  .game-spine-preview:hover .game-preview-media video { opacity: 1; }
+}
+.game-spine-preview .spine-title, .game-spine-preview .spine-format { position: relative; z-index: 2; }
 .game-context { background: #111b2b; border-radius: 0 0 .65rem .65rem; color: #d5e0ed; }
 .game-context-label { display: block; padding: .5rem 1.25rem; color: #a9bfd5; font-size: .75rem; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
 .game-context ul { max-height: 0; overflow: hidden; margin: 0; padding: 0 2.5rem; line-height: 1.7; transition: max-height .25s ease, padding .25s ease; }
 .game-entry:hover .game-context ul, .game-entry:focus-within .game-context ul { max-height: 12rem; padding-block: .5rem 1rem; }
+@media (hover: none) {
+  .game-context ul, .game-entry:focus-within .game-context ul { max-height: none; padding-block: .5rem 1rem; }
+}
 .game-spine-1 { background: linear-gradient(110deg, #315875, #21425e); }
 .game-spine-2 { background: linear-gradient(110deg, #875435, #613b2b); }
 .game-spine-3 { background: linear-gradient(110deg, #426a77, #2b4c61); }
@@ -50,6 +63,7 @@ h1 { max-width: 14ch; margin: .5rem 0 1.25rem; font-size: clamp(3rem, 8vw, 5.5re
 .spine-title { font-size: clamp(1.1rem, 3vw, 1.6rem); font-weight: 750; letter-spacing: -.02em; }
 .spine-format { margin-top: auto; font-size: .7rem; font-weight: 750; letter-spacing: .13em; text-transform: uppercase; opacity: .75; }
 .spine-reveal { position: absolute; inset: auto 0 0; display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 48px; padding: .75rem 1.5rem; background: #d7ecf0; color: #142335; font-weight: 750; transform: translateY(101%); transition: transform .2s ease; box-shadow: 0 -12px 22px #0004; }
+.game-spine-preview .spine-reveal { z-index: 3; }
 .game-spine:hover .spine-reveal, .game-spine:focus-visible .spine-reveal { transform: translateY(0); }
 .game-page { padding-block: 3rem 5rem; }
 .game-page h1 { max-width: none; font-size: clamp(2.5rem, 6vw, 4.5rem); }

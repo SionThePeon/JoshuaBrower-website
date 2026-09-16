@@ -6,11 +6,22 @@ import headshot from '../headshot.png'
 const base = import.meta.env.BASE_URL
 
 const games = [
-  { slug: 'the-shell-company', title: 'The Shell Company', format: 'WebGL', play: `${base}games/the-shell-company/`, context: ['test', 'test', 'test'] },
+  { slug: 'the-shell-company', title: 'The Shell Company', format: 'WebGL', play: `${base}games/the-shell-company/`, preview: { video: `${base}previews/the-shell-company.mp4`, image: `${base}previews/the-shell-company.jpg` }, context: ['test', 'test', 'test'] },
   { slug: 'frost-bite-delivery', title: 'Frost-Bite Delivery', format: 'Windows', download: `${base}downloads/Frost-Bite_DeliveryBigMode2026.zip`, context: ['test', 'test', 'test'] },
   { slug: 'toaster-3', title: "Toast's Adventure", format: 'WebGL', play: `${base}games/toaster-3/`, context: ['test', 'test', 'test'] },
   { slug: 'biggies-math-adventure', title: "Biggie's Math Adventure", format: 'WebGL', play: `${base}games/biggies-math-adventure/`, context: ['test', 'test', 'test'] },
 ]
+
+function playPreview(event) {
+  event.currentTarget.querySelector('video')?.play().catch(() => {})
+}
+
+function stopPreview(event) {
+  const video = event.currentTarget.querySelector('video')
+  if (!video) return
+  video.pause()
+  video.currentTime = 0
+}
 
 function GamePage({ game }) {
   const frameRef = useRef(null)
@@ -86,7 +97,23 @@ export default function App() {
           <div className="game-stack">
             {games.map((game, index) => (
               <div className="game-entry" key={game.slug}>
-                <a className={`game-spine game-spine-${index + 1}`} href={`${base}?game=${game.slug}`} aria-describedby={`${game.slug}-context`}>
+                <a
+                  className={`game-spine game-spine-${index + 1}${game.preview ? ' game-spine-preview' : ''}`}
+                  href={`${base}?game=${game.slug}`}
+                  aria-describedby={`${game.slug}-context`}
+                  onPointerEnter={(event) => { if (event.pointerType === 'mouse' || event.pointerType === 'pen') playPreview(event) }}
+                  onPointerLeave={stopPreview}
+                  onFocus={(event) => { if (event.currentTarget.matches(':focus-visible')) playPreview(event) }}
+                  onBlur={stopPreview}
+                >
+                  {game.preview && (
+                    <span className="game-preview-media" aria-hidden="true">
+                      <img src={game.preview.image} alt="" loading="lazy" />
+                      <video muted loop playsInline preload="none" poster={game.preview.image}>
+                        <source src={game.preview.video} type="video/mp4" />
+                      </video>
+                    </span>
+                  )}
                   <span className="spine-title">{game.title}</span>
                   <span className="spine-format">{game.format}</span>
                   <span className="spine-reveal" aria-hidden="true">
