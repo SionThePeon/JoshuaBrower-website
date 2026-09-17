@@ -18,7 +18,19 @@ const games = [
       'Implemented NPC pathfinding for movement through the store.',
     ],
   },
-  { slug: 'frost-bite-delivery', title: 'Frost-Bite Delivery', format: 'Windows', download: `${base}downloads/Frost-Bite_DeliveryBigMode2026.zip`, preview: { video: `${base}previews/frost-bite-delivery.mp4`, image: `${base}previews/frost-bite-delivery.jpg` }, context: ['test', 'test', 'test'] },
+  {
+    slug: 'frost-bite-delivery',
+    title: 'Frost-Bite Delivery',
+    format: 'Windows',
+    download: `${base}downloads/Frost-Bite_DeliveryBigMode2026.zip`,
+    preview: { video: `${base}previews/frost-bite-delivery.mp4`, image: `${base}previews/frost-bite-delivery.jpg` },
+    projectNotes: [
+      'Created in Unity over one week for the Bigmode Game Jam 2026.',
+      'Co-developed with Carl Gross, collaborating on game development and meeting nightly to review progress and plan next steps.',
+      'Personally created the 3D models and 2D graphics used throughout the world.',
+      'Designed a gameplay loop with incremental progression that rewards players for learning the world and optimizing delivery routes.',
+    ],
+  },
   { slug: 'toaster-3', title: "Toast's Adventure", format: 'WebGL', play: `${base}games/toaster-3/`, preview: { video: `${base}previews/toasts-adventure.mp4`, image: `${base}previews/toasts-adventure.jpg` }, context: ['test', 'test', 'test'] },
   { slug: 'biggies-math-adventure', title: "Biggie's Math Adventure", format: 'WebGL', play: `${base}games/biggies-math-adventure/`, preview: { video: `${base}previews/biggies-math-adventure.mp4`, image: `${base}previews/biggies-math-adventure.jpg` }, context: ['test', 'test', 'test'] },
 ]
