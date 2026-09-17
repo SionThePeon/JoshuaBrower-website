@@ -7,7 +7,7 @@ const base = import.meta.env.BASE_URL
 
 const games = [
   { slug: 'the-shell-company', title: 'The Shell Company', format: 'WebGL', play: `${base}games/the-shell-company/`, preview: { video: `${base}previews/the-shell-company.mp4`, image: `${base}previews/the-shell-company.jpg` }, context: ['test', 'test', 'test'] },
-  { slug: 'frost-bite-delivery', title: 'Frost-Bite Delivery', format: 'Windows', download: `${base}downloads/Frost-Bite_DeliveryBigMode2026.zip`, context: ['test', 'test', 'test'] },
+  { slug: 'frost-bite-delivery', title: 'Frost-Bite Delivery', format: 'Windows', download: `${base}downloads/Frost-Bite_DeliveryBigMode2026.zip`, preview: { video: `${base}previews/frost-bite-delivery.mp4`, image: `${base}previews/frost-bite-delivery.jpg` }, context: ['test', 'test', 'test'] },
   { slug: 'toaster-3', title: "Toast's Adventure", format: 'WebGL', play: `${base}games/toaster-3/`, context: ['test', 'test', 'test'] },
   { slug: 'biggies-math-adventure', title: "Biggie's Math Adventure", format: 'WebGL', play: `${base}games/biggies-math-adventure/`, context: ['test', 'test', 'test'] },
 ]
