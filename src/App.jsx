@@ -85,7 +85,7 @@ export default function App() {
               </p>
             </div>
             <div className="about-photos">
-              <img className="about-headshot" src={`${base}images/gpic.jpg`} alt="Portrait of Joshua" loading="lazy" />
+              <img className="about-headshot" src={`${base}images/headshot2.jpg`} alt="Portrait of Joshua" loading="lazy" />
             </div>
           </div>
         </section>
