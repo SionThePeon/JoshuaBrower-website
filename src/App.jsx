@@ -31,8 +31,32 @@ const games = [
       'Designed a gameplay loop with incremental progression that rewards players for learning the world and optimizing delivery routes.',
     ],
   },
-  { slug: 'toaster-3', title: "Toast's Adventure", format: 'WebGL', play: `${base}games/toaster-3/`, preview: { video: `${base}previews/toasts-adventure.mp4`, image: `${base}previews/toasts-adventure.jpg` }, context: ['test', 'test', 'test'] },
-  { slug: 'biggies-math-adventure', title: "Biggie's Math Adventure", format: 'WebGL', play: `${base}games/biggies-math-adventure/`, preview: { video: `${base}previews/biggies-math-adventure.mp4`, image: `${base}previews/biggies-math-adventure.jpg` }, context: ['test', 'test', 'test'] },
+  {
+    slug: 'toaster-3',
+    title: "Toast's Adventure",
+    format: 'WebGL',
+    play: `${base}games/toaster-3/`,
+    preview: { video: `${base}previews/toasts-adventure.mp4`, image: `${base}previews/toasts-adventure.jpg` },
+    projectNotes: [
+      'Created in Unity over 36 hours for Toaster @ the Toaster 2025, hosted by the University of Minnesota.',
+      'Collaborated with two other students on brainstorming and art while handling all programming.',
+      'Built a 2D platformer focused on precise movement and power-ups.',
+      'The main challenge was implementing all game code within a five-hour window during the 36-hour event.',
+    ],
+  },
+  {
+    slug: 'biggies-math-adventure',
+    title: "Biggie's Math Adventure",
+    format: 'WebGL',
+    play: `${base}games/biggies-math-adventure/`,
+    preview: { video: `${base}previews/biggies-math-adventure.mp4`, image: `${base}previews/biggies-math-adventure.jpg` },
+    projectNotes: [
+      'My first game jam and first project using Unity.',
+      'Created in five days for the Bigmode Game Jam 2025.',
+      'Co-developed with Carl Gross, splitting responsibilities across the project.',
+      'Added voice acting and a level system where players must defeat every enemy to advance.',
+    ],
+  },
 ]
 
 function playPreview(event) {
