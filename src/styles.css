@@ -58,7 +58,8 @@ h1 { max-width: 14ch; margin: .5rem 0 1.25rem; font-size: clamp(3rem, 8vw, 5.5re
 .game-context { background: #f9fbf9; border-radius: 0 0 .65rem .65rem; color: var(--ink); }
 .game-context-label { display: block; padding: .5rem 1.25rem; color: var(--muted); font-size: .75rem; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
 .game-context ul { max-height: 0; overflow: hidden; margin: 0; padding: 0 2.5rem; line-height: 1.7; transition: max-height .25s ease, padding .25s ease; }
-.game-entry:hover .game-context ul, .game-entry:focus-within .game-context ul { max-height: 12rem; padding-block: .5rem 1rem; }
+.game-entry:hover .game-context ul, .game-entry:focus-within .game-context ul { max-height: 48rem; padding-block: .5rem 1rem; }
+.game-context li + li { margin-top: .55rem; }
 @media (hover: none) {
   .game-context ul, .game-entry:focus-within .game-context ul { max-height: none; padding-block: .5rem 1rem; }
 }
@@ -74,6 +75,10 @@ h1 { max-width: 14ch; margin: .5rem 0 1.25rem; font-size: clamp(3rem, 8vw, 5.5re
 .game-spine:hover .spine-reveal, .game-spine:focus-visible .spine-reveal { transform: translateY(0); }
 .game-page { padding-block: 3rem 5rem; }
 .game-page h1 { max-width: none; font-size: clamp(2.5rem, 6vw, 4.5rem); }
+.project-notes { margin: 2rem 0; padding: clamp(1.25rem, 3vw, 2rem); border: 1px solid var(--line); border-radius: .8rem; background: #f9fbf9; }
+.project-notes h2 { margin: 0 0 1.25rem; font-size: 1.5rem; }
+.project-notes ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; margin: 0; padding: 0; list-style: none; }
+.project-notes li { padding: 1rem 1.1rem; border-left: 3px solid var(--accent); border-radius: .3rem; background: var(--canvas); line-height: 1.5; }
 .back-link { color: var(--accent); text-decoration: none; }
 .back-link:hover { text-decoration: underline; }
 .game-page .eyebrow { margin-top: 3rem; }
@@ -101,6 +106,7 @@ h1 { max-width: 14ch; margin: .5rem 0 1.25rem; font-size: clamp(3rem, 8vw, 5.5re
   .game-spine { min-height: 160px; padding: 1rem; }
   .spine-reveal { padding: .75rem 1rem; font-size: .8rem; }
   .game-frame-wrap { min-height: 300px; }
+  .project-notes ul { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {

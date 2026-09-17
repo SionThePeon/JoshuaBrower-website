@@ -5,7 +5,19 @@ import { useRef } from 'react'
 const base = import.meta.env.BASE_URL
 
 const games = [
-  { slug: 'the-shell-company', title: 'The Shell Company', format: 'WebGL', play: `${base}games/the-shell-company/`, preview: { video: `${base}previews/the-shell-company.mp4`, image: `${base}previews/the-shell-company.jpg` }, context: ['test', 'test', 'test'] },
+  {
+    slug: 'the-shell-company',
+    title: 'The Shell Company',
+    format: 'WebGL',
+    play: `${base}games/the-shell-company/`,
+    preview: { video: `${base}previews/the-shell-company.mp4`, image: `${base}previews/the-shell-company.jpg` },
+    projectNotes: [
+      'Created in 48 hours with Unity for the Club Club Game Jam.',
+      'Developed solo, creating all code, art, and music.',
+      'Built a gameplay loop around managing and restocking a store, with nighttime mini-games to earn extra money.',
+      'Implemented NPC pathfinding for movement through the store.',
+    ],
+  },
   { slug: 'frost-bite-delivery', title: 'Frost-Bite Delivery', format: 'Windows', download: `${base}downloads/Frost-Bite_DeliveryBigMode2026.zip`, preview: { video: `${base}previews/frost-bite-delivery.mp4`, image: `${base}previews/frost-bite-delivery.jpg` }, context: ['test', 'test', 'test'] },
   { slug: 'toaster-3', title: "Toast's Adventure", format: 'WebGL', play: `${base}games/toaster-3/`, preview: { video: `${base}previews/toasts-adventure.mp4`, image: `${base}previews/toasts-adventure.jpg` }, context: ['test', 'test', 'test'] },
   { slug: 'biggies-math-adventure', title: "Biggie's Math Adventure", format: 'WebGL', play: `${base}games/biggies-math-adventure/`, preview: { video: `${base}previews/biggies-math-adventure.mp4`, image: `${base}previews/biggies-math-adventure.jpg` }, context: ['test', 'test', 'test'] },
@@ -36,6 +48,12 @@ function GamePage({ game }) {
         <a className="back-link" href={`${base}#games`}>← Back to Game Jams</a>
         <p className="eyebrow">{game.format} game</p>
         <h1>{game.title}</h1>
+        {game.projectNotes && (
+          <section className="project-notes" aria-labelledby="project-notes-title">
+            <h2 id="project-notes-title">Project notes</h2>
+            <ul>{game.projectNotes.map((note) => <li key={note}>{note}</li>)}</ul>
+          </section>
+        )}
         {game.play ? (
           <>
             <p className="game-note">The game may take a moment to load. For the best view, use the fullscreen button below.</p>
@@ -122,7 +140,7 @@ export default function App() {
                 </a>
                 <div className="game-context" id={`${game.slug}-context`}>
                   <span className="game-context-label">Project notes ↓</span>
-                  <ul>{game.context.map((point, pointIndex) => <li key={pointIndex}>{point}</li>)}</ul>
+                  <ul>{(game.projectNotes ?? game.context).map((point, pointIndex) => <li key={pointIndex}>{point}</li>)}</ul>
                 </div>
               </div>
             ))}
