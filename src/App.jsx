@@ -1,15 +1,14 @@
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import { useRef } from 'react'
-import headshot from '../headshot.png'
 
 const base = import.meta.env.BASE_URL
 
 const games = [
   { slug: 'the-shell-company', title: 'The Shell Company', format: 'WebGL', play: `${base}games/the-shell-company/`, preview: { video: `${base}previews/the-shell-company.mp4`, image: `${base}previews/the-shell-company.jpg` }, context: ['test', 'test', 'test'] },
   { slug: 'frost-bite-delivery', title: 'Frost-Bite Delivery', format: 'Windows', download: `${base}downloads/Frost-Bite_DeliveryBigMode2026.zip`, preview: { video: `${base}previews/frost-bite-delivery.mp4`, image: `${base}previews/frost-bite-delivery.jpg` }, context: ['test', 'test', 'test'] },
-  { slug: 'toaster-3', title: "Toast's Adventure", format: 'WebGL', play: `${base}games/toaster-3/`, context: ['test', 'test', 'test'] },
-  { slug: 'biggies-math-adventure', title: "Biggie's Math Adventure", format: 'WebGL', play: `${base}games/biggies-math-adventure/`, context: ['test', 'test', 'test'] },
+  { slug: 'toaster-3', title: "Toast's Adventure", format: 'WebGL', play: `${base}games/toaster-3/`, preview: { video: `${base}previews/toasts-adventure.mp4`, image: `${base}previews/toasts-adventure.jpg` }, context: ['test', 'test', 'test'] },
+  { slug: 'biggies-math-adventure', title: "Biggie's Math Adventure", format: 'WebGL', play: `${base}games/biggies-math-adventure/`, preview: { video: `${base}previews/biggies-math-adventure.mp4`, image: `${base}previews/biggies-math-adventure.jpg` }, context: ['test', 'test', 'test'] },
 ]
 
 function playPreview(event) {
@@ -86,7 +85,7 @@ export default function App() {
               </p>
             </div>
             <div className="about-photos">
-              <img className="about-headshot" src={headshot} alt="Portrait of Joshua" loading="lazy" />
+              <img className="about-headshot" src={`${base}images/gpic.jpg`} alt="Portrait of Joshua" loading="lazy" />
             </div>
           </div>
         </section>
