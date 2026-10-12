@@ -185,7 +185,19 @@ export default function App() {
 
         <section className="section" id="projects" aria-labelledby="projects-title">
           <h2 id="projects-title">Projects</h2>
-          <p>More projects coming soon.</p>
+          <article className="project-card" aria-labelledby="wow-forever-title">
+            <div className="project-card-header">
+              <span className="project-status">In Progress</span>
+              <h3 id="wow-forever-title">WoW Forever Addon</h3>
+              <span className="project-tech">World of Warcraft · Lua</span>
+            </div>
+            <div className="project-card-body">
+              <p>
+                Developing a World of Warcraft addon in Lua that helps players discover the lore
+                of questlines and zones through the content they encounter, using available Journal APIs.
+              </p>
+            </div>
+          </article>
         </section>
 
         <section className="section" id="contact" aria-labelledby="contact-title">
