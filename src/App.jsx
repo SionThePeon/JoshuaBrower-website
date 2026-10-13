@@ -121,7 +121,7 @@ export default function App() {
       <main id="main-content">
         <section className="hero" aria-labelledby="hero-title">
           <p className="eyebrow">Joshua Brower · Computer Science at UMN</p>
-          <h1 id="hero-title">Exploring game development and graphics.</h1>
+          <h1 id="hero-title">Exploring game development, graphics, and cybersecurity.</h1>
           <p className="intro">
             Learn a little about me and my projects.
           </p>
@@ -156,6 +156,7 @@ export default function App() {
                 <p className="experience-company">FYTA · Berlin, Germany</p>
                 <ul>
                   <li>Developed a B2B plant-health application with real-time IoT dashboards across multiple sites and zones.</li>
+                  <li>Integrated sensor readings for soil moisture, temperature, light, salinity, and humidity.</li>
                   <li>Built UI components, data visualizations, and inventory tables, working across sensors, backend APIs, and web interfaces.</li>
                 </ul>
               </div>
@@ -168,7 +169,8 @@ export default function App() {
               <div className="experience-body">
                 <p className="experience-company">Elbo Computing Resources · Sioux Falls, SD</p>
                 <ul>
-                  <li>Supported over 100 local and national clients, resolving hardware and software issues and tracking support tickets.</li>
+                  <li>Provided technical support by phone, email, and chat for over 100 local and national clients.</li>
+                  <li>Diagnosed hardware and software issues across computers, printers, and peripherals, documenting and tracking support tickets.</li>
                   <li>Performed backups, updates, security patching, and asset management.</li>
                 </ul>
               </div>
