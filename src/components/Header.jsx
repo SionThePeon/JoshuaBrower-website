@@ -6,9 +6,9 @@ export default function Header() {
       <nav aria-label="Main navigation">
         <a href={`${base}#main-content`}>Home</a>
         <a href={`${base}#about`}>About</a>
+        <a href={`${base}#experience`}>Experience & Skills</a>
         <a href={`${base}#games`}>Game Jams</a>
         <a href={`${base}#projects`}>Projects</a>
-        <a href={`${base}#experience`}>Experience & Skills</a>
         <a href={`${base}#contact`}>Contact</a>
       </nav>
     </header>
