@@ -200,6 +200,51 @@ export default function App() {
           </article>
         </section>
 
+        <section className="section" id="experience" aria-labelledby="experience-title">
+          <h2 id="experience-title">Experience & Technical Skills</h2>
+          <div className="experience-list">
+            <article className="experience-card" aria-labelledby="fyta-title">
+              <div className="experience-heading">
+                <h3 id="fyta-title">Software Engineer Intern</h3>
+                <p className="experience-dates">May - July 2026</p>
+              </div>
+              <div className="experience-body">
+                <p className="experience-company">FYTA · Berlin, Germany</p>
+                <ul>
+                  <li>Developed and maintained a B2B web application for monitoring plant health across multiple sites and zones.</li>
+                  <li>Integrated IoT sensor data for soil moisture, temperature, light, salinity, and humidity into a real-time dashboard.</li>
+                  <li>Built UI components, data visualizations, and table views for business clients managing large plant inventories.</li>
+                  <li>Worked across the IoT pipeline, from physical sensors and backend APIs to customer-facing web interfaces.</li>
+                </ul>
+              </div>
+            </article>
+            <article className="experience-card" aria-labelledby="elbo-title">
+              <div className="experience-heading">
+                <h3 id="elbo-title">Cybersecurity Intern</h3>
+                <p className="experience-dates">March 2024 - April 2026</p>
+              </div>
+              <div className="experience-body">
+                <p className="experience-company">Elbo Computing Resources · Sioux Falls, SD</p>
+                <ul>
+                  <li>Provided first-level technical support by phone, email, and chat for over 100 local and national clients.</li>
+                  <li>Diagnosed and resolved hardware and software issues across desktops, laptops, printers, and peripherals.</li>
+                  <li>Documented and tracked support requests in a ticketing system to support timely resolution.</li>
+                  <li>Performed backups, updates, security patching, and asset management.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+          <div className="skills-panel">
+            <h3>Technical Skills</h3>
+            <dl className="skills-grid">
+              <div><dt>Programming</dt><dd>Java, Python, C/C++</dd></div>
+              <div><dt>Web Development</dt><dd>React, TypeScript, front-end development; exposure to backend API design</dd></div>
+              <div><dt>Game Development & 3D</dt><dd>Unity, Godot, Blender</dd></div>
+              <div><dt>Development Tools</dt><dd>GitHub, Claude Code</dd></div>
+            </dl>
+          </div>
+        </section>
+
         <section className="section" id="contact" aria-labelledby="contact-title">
           <h2 id="contact-title">Contact</h2>
           <p>Want to get in touch? Please email me at <a href="mailto:Jsbrower29@gmail.com">Jsbrower29@gmail.com</a>.</p>
