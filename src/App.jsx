@@ -135,7 +135,7 @@ export default function App() {
                 Hi! I'm Joshua, a junior in college at University of Minnesota - Twin Cities studying computer science.
                 I love game design and development, and have participated in multiple game jams in small groups doing multiple roles.
                 I love learning more about both graphics and programming in games as I dive more into the game development industry.
-                I have experience developing games with Unity, Godot, and Unreal Engine, as well as programming in C++ and scripting in Lua.
+                I have experience developing games or plugins with Unity, Godot, and Unreal Engine, as well as programming in C++ and scripting in Lua.
               </p>
             </div>
             <div className="about-photos">
