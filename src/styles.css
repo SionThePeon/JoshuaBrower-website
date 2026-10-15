@@ -23,6 +23,32 @@ a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 button:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 
 /* Static screen texture keeps the CRT treatment comfortable to read. */
+.crt-enabled {
+  --crt-frame: 18px;
+  --crt-radius: 32px;
+  scroll-padding-block: calc(var(--crt-frame) + 1rem);
+}
+.crt-enabled body {
+  padding: var(--crt-frame) var(--crt-frame) var(--crt-frame) calc(var(--sidebar-width) + var(--crt-frame));
+}
+.crt-enabled .site-header {
+  top: var(--crt-frame);
+  bottom: var(--crt-frame);
+  left: var(--crt-frame);
+}
+html::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 101;
+  pointer-events: none;
+  visibility: hidden;
+  border: var(--crt-frame, 18px) solid #292b2d;
+  border-radius: calc(var(--crt-radius, 32px) + var(--crt-frame, 18px));
+  box-shadow: 0 0 0 60px #292b2d, inset 0 0 0 2px #111315,
+    inset 0 5px 16px rgb(0 0 0 / 35%), inset 0 -2px 5px rgb(255 255 255 / 20%);
+}
+.crt-enabled::before { visibility: visible; }
 html::after {
   content: '';
   position: fixed;
@@ -34,7 +60,12 @@ html::after {
     repeating-linear-gradient(to bottom, transparent 0, transparent 2px, rgb(20 25 35 / 5%) 2px, rgb(20 25 35 / 5%) 3px),
     radial-gradient(ellipse at center, transparent 55%, rgb(12 18 30 / 14%) 100%);
 }
-.crt-enabled::after { visibility: visible; }
+.crt-enabled::after {
+  visibility: visible;
+  inset: var(--crt-frame);
+  border-radius: var(--crt-radius);
+}
+html:has(:fullscreen)::before, html:has(:fullscreen)::after { visibility: hidden; }
 .crt-enabled body { text-shadow: .35px 0 rgb(185 45 45 / 18%), -.35px 0 rgb(35 85 190 / 18%); }
 .crt-enabled h1, .crt-enabled h2, .crt-enabled .brand { text-shadow: .5px 0 rgb(185 45 45 / 22%), -.5px 0 rgb(35 85 190 / 22%), 0 0 5px currentColor; }
 .crt-toggle {
@@ -59,7 +90,9 @@ html::after {
 .crt-toggle-status { margin-left: auto; color: var(--muted); font-size: .75rem; font-weight: 700; }
 
 @media print {
-  html::after, .crt-toggle { display: none; }
+  html::before, html::after, .crt-toggle { display: none; }
+  .crt-enabled body { padding: 0 0 0 var(--sidebar-width); }
+  .crt-enabled .site-header { top: 0; bottom: 0; left: 0; }
   .crt-enabled body, .crt-enabled h1, .crt-enabled h2, .crt-enabled .brand { text-shadow: none; }
 }
 
@@ -160,6 +193,9 @@ h1 { max-width: 14ch; margin: .5rem 0 1.25rem; font-size: clamp(2.25rem, 5vw, 3.
 .skills-grid dd { margin: 0; color: var(--muted); line-height: 1.7; }
 
 @media (max-width: 760px) {
+  .crt-enabled { --crt-frame: 8px; --crt-radius: 22px; }
+  .crt-enabled body { padding: var(--crt-frame); }
+  .crt-enabled .site-header { inset: auto; border-radius: var(--crt-radius) var(--crt-radius) 0 0; }
   body { padding-left: 0; }
   .site-header { position: relative; inset: auto; width: 100%; padding: 1.25rem 1.5rem; border-right: 0; border-bottom: 1px solid #000060; overflow: visible; }
   nav { flex-direction: row; flex-wrap: wrap; gap: .25rem; margin-top: .75rem; }
