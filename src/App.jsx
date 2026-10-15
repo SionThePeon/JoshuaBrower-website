@@ -179,10 +179,10 @@ export default function App() {
           <div className="skills-panel">
             <h3>Technical Skills</h3>
             <dl className="skills-grid">
-              <div><dt>Programming</dt><dd>Java, Python, C/C++</dd></div>
+              <div><dt>Programming</dt><dd>C/C++, Java, Python</dd></div>
               <div><dt>Web Development</dt><dd>React, TypeScript, front-end development; exposure to backend API design</dd></div>
-              <div><dt>Game Development & 3D</dt><dd>Unity, Godot, Blender</dd></div>
-              <div><dt>Development Tools</dt><dd>GitHub, Claude Code</dd></div>
+              <div><dt>Game Development & 3D</dt><dd>Unity, Godot, Blender, Unreal</dd></div>
+              <div><dt>Development Tools</dt><dd>GitHub, Claude Code, Codex</dd></div>
             </dl>
           </div>
         </section>
@@ -228,6 +228,20 @@ export default function App() {
 
         <section className="section" id="projects" aria-labelledby="projects-title">
           <h2 id="projects-title">Projects</h2>
+          <article className="project-card" aria-labelledby="unreal-plugin-title">
+            <div className="project-card-header">
+              <span className="project-status">In Progress</span>
+              <h3 id="unreal-plugin-title">Unreal Plugin</h3>
+              <span className="project-tech">C++</span>
+            </div>
+            <div className="project-card-body">
+              <p>
+                Co-developing an Unreal Engine plugin in C++ that converts publicly available
+                topographic data into detailed 3D terrain meshes. Applying computer graphics
+                knowledge to build a workflow that transforms vector and raster datasets into 3D meshes.
+              </p>
+            </div>
+          </article>
           <article className="project-card" aria-labelledby="wow-forever-title">
             <div className="project-card-header">
               <span className="project-status">In Progress</span>
