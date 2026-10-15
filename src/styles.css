@@ -24,7 +24,8 @@ button:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 
 /* Static screen texture keeps the CRT treatment comfortable to read. */
 .crt-enabled {
-  --crt-frame: 18px;
+  --crt-frame: 22px;
+  --crt-trim: 6px;
   --crt-radius: 32px;
   scroll-padding-block: calc(var(--crt-frame) + 1rem);
 }
@@ -43,10 +44,15 @@ html::before {
   z-index: 101;
   pointer-events: none;
   visibility: hidden;
-  border: var(--crt-frame, 18px) solid #292b2d;
+  border: var(--crt-frame, 22px) solid #bac6cb;
+  border-color: #e3ebee #aab8bf #97a7af #cfdbdf;
   border-radius: calc(var(--crt-radius, 32px) + var(--crt-frame, 18px));
-  box-shadow: 0 0 0 60px #292b2d, inset 0 0 0 2px #111315,
-    inset 0 5px 16px rgb(0 0 0 / 35%), inset 0 -2px 5px rgb(255 255 255 / 20%);
+  box-shadow: 0 0 0 60px #bac6cb,
+    inset 0 0 0 1px #64747c,
+    inset 0 0 0 var(--crt-trim, 6px) #171e22,
+    inset 0 0 0 calc(var(--crt-trim, 6px) + 1px) #546168,
+    inset 0 8px 18px rgb(0 0 0 / 32%),
+    inset 0 -2px 5px rgb(255 255 255 / 20%);
 }
 .crt-enabled::before { visibility: visible; }
 html::after {
@@ -193,7 +199,7 @@ h1 { max-width: 14ch; margin: .5rem 0 1.25rem; font-size: clamp(2.25rem, 5vw, 3.
 .skills-grid dd { margin: 0; color: var(--muted); line-height: 1.7; }
 
 @media (max-width: 760px) {
-  .crt-enabled { --crt-frame: 8px; --crt-radius: 22px; }
+  .crt-enabled { --crt-frame: 10px; --crt-trim: 3px; --crt-radius: 22px; }
   .crt-enabled body { padding: var(--crt-frame); }
   .crt-enabled .site-header { inset: auto; border-radius: var(--crt-radius) var(--crt-radius) 0 0; }
   body { padding-left: 0; }
