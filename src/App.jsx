@@ -244,15 +244,16 @@ export default function App() {
           </article>
           <article className="project-card" aria-labelledby="wow-forever-title">
             <div className="project-card-header">
-              <span className="project-status">In Progress</span>
+              <span className="project-status">Completed</span>
               <h3 id="wow-forever-title">WoW Forever Addon</h3>
               <span className="project-tech">World of Warcraft · Lua</span>
             </div>
             <div className="project-card-body">
               <p>
-                Developing a World of Warcraft addon in Lua that helps players discover the lore
+                Developed a World of Warcraft addon in Lua that helps players discover the lore
                 of questlines and zones through the content they encounter, using available Journal APIs.
               </p>
+              <p><a href="https://github.com/SionThePeon/WoWAddon">View repository on GitHub</a></p>
             </div>
           </article>
         </section>
